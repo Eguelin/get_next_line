@@ -72,17 +72,25 @@ The gcc compiler must be installed. To install them, run the following commands:
 ## Usage
 
 ```c
-#include <stdio.h>
 #include "get_next_line.h"
+#include <fcntl.h>
+#include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char *line;
-	int fd = open("file.txt", O_RDONLY);
-	while (get_next_line(fd, &line) > 0)
+	int		fd;
+	int		i;
+	char	*line;
+
+	fd = open("bible.txt", O_RDONLY);
+	line = "";
+	i = 1;
+	while (line)
 	{
-		printf("%s\n", line);
-		free(line);
+		line = get_next_line(fd);
+		printf("l%d. %s", i, line);
+		free (line);
+		i++;
 	}
 	close(fd);
 	return (0);
