@@ -11,7 +11,7 @@ static variables, better understand allocations and buffering.
 
 The function must be prototyped as follows:
 ```c
-int get_next_line(int fd, char **line);
+char	*get_next_line(int fd);
 ```
 
 the buffer BUFFER_SIZE must be able to be modified at compile time with the flag -D BUFFER_SIZE=xx.
