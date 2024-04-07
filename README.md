@@ -73,7 +73,7 @@ The gcc compiler must be installed. To install them, run the following commands:
 
 ```c
 #include <stdio.h>
-#include "ft_printf.h"
+#include "get_next_line.h"
 
 int main(void)
 {
